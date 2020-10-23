@@ -1,6 +1,9 @@
 syntax on
 filetype plugin indent on
 
+" JUST FOR EXERCISM!!!
+source /home/smeng/snap/exercism/5/exercism/vimscript/exercism.vim
+
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -64,6 +67,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 "plug junegunn/limelight <---
+Plug 'junegunn/vader.vim'
+
+" tmux
+Plug 'christoomey/vim-tmux-navigator'
 
 " colour schemes:
 Plug 'jcherven/jummidark.vim' " bright purple
@@ -100,22 +107,24 @@ Plug 'urso/haskell_syntax.vim'
 call plug#end()
 
 " set termguicolors
-colorscheme nord
-set background=dark
+colorscheme PaperColor
+set background=light
 
+" 'lervag/vimtex'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
+" 'SirVer/Ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
 let g:UltiSnipsEditSplit = "vertical"
 
 
+" svc7 specific
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
