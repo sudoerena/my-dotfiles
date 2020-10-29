@@ -1,3 +1,3 @@
-# my-dotfiles
+#My Config Files
 
-Here are my dotfiles for easy customization.
+Linux dotfiles for configuration.
