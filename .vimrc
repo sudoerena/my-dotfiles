@@ -1,9 +1,6 @@
 syntax on
 filetype plugin indent on
 
-" JUST FOR EXERCISM!!!
-source /home/smeng/snap/exercism/5/exercism/vimscript/exercism.vim
-
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -31,6 +28,12 @@ set spell
 set spelllang=en_ca
 inoremap <C-c> <C-g>u<Esc>[s1z=`]a<C-g>u
 
+" remapping escape
+inoremap jk <esc>
+inoremap kj <esc>
+" separate mappings for visual, normal mode
+" 'gv' brings you back to previous visual selection
+
 let mapleader = ","
 
 " ctrl-d in insert mode deletes the current line
@@ -53,14 +56,6 @@ nnoremap <space> za
 
 nnoremap <leader>ev :vsplit ~/.vimrc<cr>
 
-" OBSOLETE
-" ctrl-shift-u in insert mode UPPERCASES the current word
-" inoremap <C-S-u> <esc>bvwUa
-" ctrl-shift-u in normal mode UPPERCASES the current word 
-" nnoremap <C-S-u> bvwU
-"   --> ctrl and ctrl-shift are the same
-" 
-
 call plug#begin('~/.vim/plugged')
 
 " general vim:
@@ -68,34 +63,25 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 "plug junegunn/limelight <---
 Plug 'junegunn/vader.vim'
+Plug 'sirver/ultisnips'
 
 " tmux
 Plug 'christoomey/vim-tmux-navigator'
 
 " colour schemes:
-Plug 'jcherven/jummidark.vim' " bright purple
 Plug 'mhartington/oceanic-next' " light mode has poor highlight contrast
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'crusoexia/vim-monokai'
-" pink:
-Plug 'nightsense/strawberry'
-Plug 'sts10/vim-pink-moon'
 " light and dark:
 Plug 'morhetz/gruvbox' " REAL yellow
 Plug 'NLKNguyen/papercolor-theme' " wack colours, dark kinda ugly
 Plug 'rakr/vim-one' " relatively better
 Plug 'arcticicestudio/nord-vim'
-Plug 'junegunn/seoul256.vim'
+Plug 'altercation/solarized'
 " airline themes:
 Plug 'vim-airline/vim-airline-themes'
 
-" baba's:
-Plug 'dylnmc/novum.vim'
-Plug 'jacoborus/tender.vim'
-
 " LaTeX:
 Plug 'lervag/vimtex'
-Plug 'sirver/ultisnips'
 
 " racket:
 Plug 'wlangstroth/vim-racket'
@@ -107,24 +93,22 @@ Plug 'urso/haskell_syntax.vim'
 call plug#end()
 
 " set termguicolors
-colorscheme PaperColor
+colorscheme one
 set background=light
 
-" 'lervag/vimtex'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-" 'SirVer/Ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
 let g:UltiSnipsEditSplit = "vertical"
 
 
-" svc7 specific
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
 
