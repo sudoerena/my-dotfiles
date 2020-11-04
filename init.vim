@@ -1,9 +1,5 @@
 " ~/.config/nvim/init.vim
 
-" FIX: remove dependence on vim (migrate)
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
-
 syntax on
 filetype plugin indent on
 
