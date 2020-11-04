@@ -129,12 +129,11 @@ let g:python3_host_prog = '/usr/bin/python3'
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-set termguicolors
 if has('unix')
     set t_Co=256
 endif
 
-colorscheme PaperColor
+colorscheme one
 set background=light
 
 

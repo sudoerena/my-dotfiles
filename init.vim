@@ -1,5 +1,9 @@
 " ~/.config/nvim/init.vim
 
+" FIX: remove dependence on vim (migrate)
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+
 syntax on
 filetype plugin indent on
 
@@ -84,8 +88,6 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox' 
 Plug 'NLKNguyen/papercolor-theme' 
 Plug 'rakr/vim-one' 
-Plug 'arcticicestudio/nord-vim'
-Plug 'altercation/solarized'
 " airline themes:
 Plug 'vim-airline/vim-airline-themes'
 
