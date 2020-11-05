@@ -119,6 +119,8 @@ let g:UltiSnipsEditSplit = "vertical"
 " linux specific
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
+" for older versions of neovim
+let g:vimtex_version_check = 0
 
 
 " +-----------------------------------------------------------------+
@@ -145,14 +147,16 @@ au Filetype tex set breakindent " line visually indented (source not affected
 au Filetype tex set showbreak=-- " inserts the '--' string before the trailing broken rows
 au Filetype tex set spell
 au Filetype tex set spelllang=en_ca
-au Filetype tex inoremap <C-c> <C-g>u<Esc>[s1z=`]a<C-g>u " spellcheck
+" spellcheck
+au Filetype tex inoremap <C-c> <C-g>u<Esc>[s1z=`]a<C-g>u 
 
 au Filetype text set wrap
 au Filetype text set linebreak " wraps at a word boundary rather than in the middle
-au Filetype text set breakindent " lien visually indented (source not affected
+au Filetype text set breakindent " line visually indented (source not affected
 au Filetype text set showbreak=-- " inserts the '--' string before the trailing broken rows
 au Filetype text set spell
 au Filetype text set spelllang=en_ca
+" spellcheck
 au Filetype text inoremap <C-c> <C-g>u<Esc>[s1z=`]a<C-g>u
 
 au BufRead,BufNewFile *.stc set filetype=haskell
