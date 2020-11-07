@@ -57,6 +57,9 @@ nnoremap =p :set<space>nu!\|set<space>rnu!<CR>
 " <space> sets to toggle expanding folds
 nnoremap <space> za
 
+" ctrl-x to redraw screen
+nnoremap <c-x> :redraw<cr>
+
 " edit .vimrc
 nnoremap <leader>ev :vsplit ~/.vimrc<cr>
 
@@ -64,41 +67,41 @@ nnoremap <leader>ev :vsplit ~/.vimrc<cr>
 " +-----------------------------------------------------------------+
 " |                              Vim Plug                           |
 " +-----------------------------------------------------------------+
-call plug#begin('~/.vim/plugged')
-
-" general vim:
-Plug 'vim-airline/vim-airline'
-Plug 'junegunn/goyo.vim'
-"plug junegunn/limelight <---
-Plug 'junegunn/vader.vim'
-Plug 'sirver/ultisnips'
-
-" tmux
-Plug 'christoomey/vim-tmux-navigator'
-
-" colour schemes:
-Plug 'mhartington/oceanic-next' 
-Plug 'drewtempelmeyer/palenight.vim'
-" light and dark:
-Plug 'morhetz/gruvbox' 
-Plug 'NLKNguyen/papercolor-theme' 
-Plug 'rakr/vim-one' 
-Plug 'arcticicestudio/nord-vim'
-Plug 'altercation/solarized'
-" airline themes:
-Plug 'vim-airline/vim-airline-themes'
-
-" LaTeX:
-Plug 'lervag/vimtex'
-
-" racket:
-Plug 'wlangstroth/vim-racket'
-
-" haskell:
-Plug 'neovimhaskell/haskell-vim'
-Plug 'urso/haskell_syntax.vim'
-
-call plug#end()
+" call plug#begin('~/.vim/plugged')
+" 
+" " general vim:
+" Plug 'vim-airline/vim-airline'
+" Plug 'junegunn/goyo.vim'
+" "plug junegunn/limelight <---
+" Plug 'junegunn/vader.vim'
+" Plug 'sirver/ultisnips'
+" 
+" " tmux
+" Plug 'christoomey/vim-tmux-navigator'
+" 
+" " colour schemes:
+" Plug 'mhartington/oceanic-next' 
+" Plug 'drewtempelmeyer/palenight.vim'
+" " light and dark:
+" Plug 'morhetz/gruvbox' 
+" Plug 'NLKNguyen/papercolor-theme' 
+" Plug 'rakr/vim-one' 
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'altercation/solarized'
+" " airline themes:
+" Plug 'vim-airline/vim-airline-themes'
+" 
+" " LaTeX:
+" Plug 'lervag/vimtex'
+" 
+" " racket:
+" Plug 'wlangstroth/vim-racket'
+" 
+" " haskell:
+" Plug 'neovimhaskell/haskell-vim'
+" Plug 'urso/haskell_syntax.vim'
+" 
+" call plug#end()
 
 
 " +-----------------------------------------------------------------+
@@ -133,7 +136,7 @@ if has('unix')
     set t_Co=256
 endif
 
-colorscheme PaperColor
+colorscheme default
 set background=light
 
 
