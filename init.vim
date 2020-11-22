@@ -133,7 +133,7 @@ if has('unix')
     set t_Co=256
 endif
 
-colorscheme PaperColor
+colorscheme default
 set background=light
 
 
