@@ -40,11 +40,6 @@ inoremap kj <esc>
 " FIX: add separate mappings for visual, normal mode
 " 'gv' brings you back to previous visual selection
 
-" ctrl-d in insert mode deletes the current line
-inoremap <C-d> <C-o>dd
-" ctrl-p in insert mode puts the yanked texu ('gp' moves cursor to end)
-inoremap <C-p> <ESC>gpkA
-
 " \k clears search highlight
 nnoremap \k :let<space>@/=""<CR>
 " '==' formats indent, and moves back to previous location
@@ -112,11 +107,12 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-" 'SirVer/Ultisnips'
+" 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit = "vertical"
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'MySnips']
 
 " linux specific
 let g:python_host_prog = '/usr/bin/python'
@@ -146,7 +142,7 @@ au Filetype tex set breakindent " line visually indented (source not affected
 au Filetype tex set showbreak=-- " inserts the '--' string before the trailing broken rows
 au Filetype tex set spell
 au Filetype tex set spelllang=en_ca
-au Filetype tex inoremap <C-c> <C-g>u<Esc>[s1z=`]a<C-g>u " spellcheck
+au Filetype tex inoremap <C-c> <C-g>u<Esc>[s1z=`]a<C-g>u 
 
 au Filetype text set wrap
 au Filetype text set linebreak " wraps at a word boundary rather than in the middle
