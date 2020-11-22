@@ -22,6 +22,7 @@ set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
 set encoding=utf-8
+set nospell
 
 if has('win64')
     let &shell='cmd.exe'
@@ -67,7 +68,7 @@ call plug#begin('~/.config/nvim/plugged')
 " general vim:
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
-"plug junegunn/limelight <---
+"plug junegunn/limelight <--- FIX
 Plug 'junegunn/vader.vim'
 Plug 'sirver/ultisnips'
 
@@ -130,6 +131,8 @@ let g:rainbow_active = 1
 " linux specific
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
+" for older versions of neovim
+let g:vimtex_version_check = 0
 
 
 " +-----------------------------------------------------------------+
@@ -161,7 +164,7 @@ au Filetype tex inoremap <c-c> <c-g>u<Esc>[s1z=`]a<C-g>u
 
 au Filetype text set wrap
 au Filetype text set linebreak " wraps at a word boundary rather than in the middle
-au Filetype text set breakindent " lien visually indented (source not affected
+au Filetype text set breakindent " line visually indented (source not affected
 au Filetype text set showbreak=-- " inserts the '--' string before the trailing broken rows
 au Filetype text set spell
 au Filetype text set spelllang=en_ca

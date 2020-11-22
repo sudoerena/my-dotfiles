@@ -22,6 +22,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set encoding=utf-8
+set nospell
 
 if has('win64')
     let &shell='cmd.exe'
@@ -64,7 +65,7 @@ call plug#begin('~/.vim/plugged')
 " general vim:
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
-"plug junegunn/limelight <---
+"plug junegunn/limelight <--- FIX
 Plug 'junegunn/vader.vim'
 Plug 'sirver/ultisnips'
 
@@ -128,7 +129,7 @@ if has('unix')
     set t_Co=256
 endif
 
-colorscheme PaperColor
+colorscheme one
 set background=light
 
 
