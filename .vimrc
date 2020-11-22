@@ -22,6 +22,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set encoding=utf-8
+set nospell
 
 if has('win64')
     let &shell='cmd.exe'
@@ -38,11 +39,6 @@ inoremap jk <esc>
 inoremap kj <esc>
 " FIX: add separate mappings for visual, normal mode
 " 'gv' brings you back to previous visual selection
-
-" ctrl-d in insert mode deletes the current line
-inoremap <C-d> <C-o>dd
-" ctrl-p in insert mode puts the yanked texu ('gp' moves cursor to end)
-inoremap <C-p> <ESC>gpkA
 
 " \k clears search highlight
 nnoremap \k :let<space>@/=""<CR>
@@ -70,13 +66,11 @@ nnoremap <leader>ev :vsplit ~/.vimrc<cr>
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-set termguicolors
 if has('unix')
     set t_Co=256
 endif
 
 colorscheme default
-set background=light
 
 
 " +-----------------------------------------------------------------+
@@ -88,7 +82,7 @@ au Filetype tex set breakindent " line visually indented (source not affected
 au Filetype tex set showbreak=-- " inserts the '--' string before the trailing broken rows
 au Filetype tex set spell
 au Filetype tex set spelllang=en_ca
-au Filetype tex inoremap <C-c> <C-g>u<Esc>[s1z=`]a<C-g>u " spellcheck
+au Filetype tex inoremap <C-c> <C-g>u<Esc>[s1z=`]a<C-g>u 
 
 au Filetype text set wrap
 au Filetype text set linebreak " wraps at a word boundary rather than in the middle
