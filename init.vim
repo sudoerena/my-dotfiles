@@ -66,6 +66,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " general vim:
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 "plug junegunn/limelight <---
 Plug 'junegunn/vader.vim'
@@ -145,7 +146,8 @@ endif
 
 colorscheme nord
 "set background=light
-let g:airline_theme='solarized'
+let g:airline_theme='one'
+let g:airline_powerline_fonts = 1
 
 
 " +-----------------------------------------------------------------+
