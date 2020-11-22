@@ -69,7 +69,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
-Plug junegunn/limelight
+Plug 'junegunn/limelight'
 Plug 'junegunn/vader.vim'
 Plug 'sirver/ultisnips'
 
