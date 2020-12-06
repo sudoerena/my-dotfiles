@@ -12,6 +12,7 @@ set -o vi
 
 alias ..='cd ..'
 alias ...='. ~/.bashrc'
+
 alias h='history|grep'
 alias dirs='dirs -v'
 # clear stack with 'dirs -c'
@@ -23,17 +24,17 @@ trash () {
     i=1
     for FILE in "$@"; do
         # if found file
-        if [ -f "$FILE" ] || [ -d "$FILE" ]; then
-            if [ -d "$FILE" ]; then
-                        FILE="${FILE%?}"
+        if [[ -f "$FILE" || -d "$FILE" ]]; then
+            if [[ "$FILE" =~ /$ ]]; then
+                FILE="${FILE%?}"
             fi
             WD=${PWD}
             cd ~/.Trash
             # if found file in Trash
-            if [ -f "$FILE" ] || [ -d "$FILE" ]; then
+            if [[ -f "$FILE" || -d "$FILE" ]]; then
                 while : ; do
                     # if found file(i)
-                    if [ -f "${FILE}(${i})" ] || [ -d "${FILE}(${i})" ]; then
+                    if [[ -f "${FILE}(${i})" || -d "${FILE}(${i})" ]]; then
                         ((i+=1))
                     else
                         mv "${WD}"/"${FILE}" ~/.Trash/"${FILE}(${i})"
