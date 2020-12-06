@@ -71,10 +71,10 @@ nnoremap <leader>rv :source ~/.vimrc<cr>
 " |                              Vim Plug                           |
 " +-----------------------------------------------------------------+
 call plug#begin('~/.vim/plugged')
-source plugs.vim
+source ~/.vim/conf/plugs.vim
 call plug#end()
 
-source plugins.vim
+source ~/.vim/conf/plugins.vim
 
 
 " +-----------------------------------------------------------------+
@@ -90,9 +90,13 @@ endif
 " for agreement in putty
 colorscheme nord
 "set background=light
+"
 let g:airline_theme='oceanicnextlight'
 let g:airline_solarized_bg='light'
 let g:airline#extensions#tabline#enabled = 1
+
+" for when powerline symbols don't work with the above
+" source ~/.config/nvim/conf/powerline-symbols.vim
 
 
 " +-----------------------------------------------------------------+

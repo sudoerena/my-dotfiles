@@ -71,10 +71,10 @@ nnoremap <leader>rv :source ~/.config/nvim/init.vim<cr>
 " |                              Vim Plug                           |
 " +-----------------------------------------------------------------+
 call plug#begin('~/.config/nvim/plugged')
-source plugs.vim
+source ~/.config/nvim/conf/plugs.vim
 call plug#end()
 
-source plugins.vim
+source ~/.config/nvim/conf/plugins.vim
 
 
 " +-----------------------------------------------------------------+
@@ -97,7 +97,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " for when powerline symbols don't work with the above
-" source powerline-symbols.vim
+" source ~/.config/nvim/conf/powerline-symbols.vim
 
 
 " +-----------------------------------------------------------------+
