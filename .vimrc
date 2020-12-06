@@ -24,15 +24,23 @@ set incsearch
 set encoding=utf-8
 set nospell
 
+" windows specific
 if has('win64')
     let &shell='cmd.exe'
+endif
+
+" linux specific
+if has('unix')
+    let g:python_host_prog = '/usr/bin/python'
+    let g:python3_host_prog = '/usr/bin/python3'
 endif
 
 
 " +-----------------------------------------------------------------+
 " |                            Key Remaps                           |
 " +-----------------------------------------------------------------+
-let mapleader = ","
+let mapleader = "\\"
+let maplocalleader = "\\"
 
 " remapping escape
 inoremap jk <esc>
@@ -55,82 +63,36 @@ nnoremap <space> za
 
 " edit .vimrc
 nnoremap <leader>ev :vsplit ~/.vimrc<cr>
+" reload .vimrc
+nnoremap <leader>rv :source ~/.vimrc<cr>
 
 
 " +-----------------------------------------------------------------+
 " |                              Vim Plug                           |
 " +-----------------------------------------------------------------+
 call plug#begin('~/.vim/plugged')
-
-" general vim:
-Plug 'vim-airline/vim-airline'
-Plug 'junegunn/goyo.vim'
-"plug junegunn/limelight <--- FIX
-Plug 'junegunn/vader.vim'
-Plug 'sirver/ultisnips'
-
-" tmux
-Plug 'christoomey/vim-tmux-navigator'
-
-" colour schemes:
-Plug 'mhartington/oceanic-next' 
-Plug 'drewtempelmeyer/palenight.vim'
-" light and dark:
-Plug 'morhetz/gruvbox' 
-Plug 'NLKNguyen/papercolor-theme' 
-Plug 'rakr/vim-one' 
-Plug 'arcticicestudio/nord-vim'
-Plug 'altercation/solarized'
-" airline themes:
-Plug 'vim-airline/vim-airline-themes'
-
-" LaTeX:
-Plug 'lervag/vimtex'
-
-" racket:
-Plug 'wlangstroth/vim-racket'
-
-" haskell:
-Plug 'neovimhaskell/haskell-vim'
-Plug 'urso/haskell_syntax.vim'
-
+source plugs.vim
 call plug#end()
 
-
-" +-----------------------------------------------------------------+
-" |                         Plugin-Specific                         |
-" +-----------------------------------------------------------------+
-" 'lervag/vimtex'
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-
-" 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsEditSplit = "vertical"
-let g:UltiSnipsSnippetDirectories=['UltiSnips', 'MySnips']
-
-" linux specific
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+source plugins.vim
 
 
 " +-----------------------------------------------------------------+
 " |                          Colour Scheme                          |
 " +-----------------------------------------------------------------+
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+"set colorcolumn=80
+"highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 if has('unix')
     set t_Co=256
 endif
 
-colorscheme one
-set background=light
+" for agreement in putty
+colorscheme nord
+"set background=light
+let g:airline_theme='oceanicnextlight'
+let g:airline_solarized_bg='light'
+let g:airline#extensions#tabline#enabled = 1
 
 
 " +-----------------------------------------------------------------+

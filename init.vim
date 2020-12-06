@@ -24,8 +24,15 @@ set incsearch
 set encoding=utf-8
 set nospell
 
+" windows specific
 if has('win64')
     let &shell='cmd.exe'
+endif
+
+" linux specific
+if has('unix')
+    let g:python_host_prog = '/usr/bin/python'
+    let g:python3_host_prog = '/usr/bin/python3'
 endif
 
 
@@ -64,76 +71,10 @@ nnoremap <leader>rv :source ~/.config/nvim/init.vim<cr>
 " |                              Vim Plug                           |
 " +-----------------------------------------------------------------+
 call plug#begin('~/.config/nvim/plugged')
-
-" general vim:
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight'
-Plug 'junegunn/vader.vim'
-Plug 'sirver/ultisnips'
-
-" tmux/workflow
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jpalardy/vim-slime'
-
-" colour schemes:
-Plug 'mhartington/oceanic-next' 
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'arcticicestudio/nord-vim'
-" light and dark:
-Plug 'morhetz/gruvbox' 
-Plug 'NLKNguyen/papercolor-theme' 
-Plug 'rakr/vim-one' 
-Plug 'altercation/solarized'
-" airline themes:
-Plug 'vim-airline/vim-airline-themes'
-
-" LaTeX:
-Plug 'lervag/vimtex'
-
-" racket:
-Plug 'wlangstroth/vim-racket'
-Plug 'gokcehan/vim-opex'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'luochen1990/rainbow'
-
-" haskell:
-Plug 'neovimhaskell/haskell-vim'
-Plug 'urso/haskell_syntax.vim'
-
+source plugs.vim
 call plug#end()
 
-
-" +-----------------------------------------------------------------+
-" |                         Plugin-Specific                         |
-" +-----------------------------------------------------------------+
-" 'lervag/vimtex'
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-let g:vimtex_version_check = 0
-
-" 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsEditSplit = "vertical"
-let g:UltiSnipsSnippetDirectories=['UltiSnips', 'MySnips']
-
-" 'jpalardy/vim-slime'
-let g:slime_target = "tmux"
-
-" 'luochen1990/rainbow'
-let g:rainbow_active = 1
-
-" linux specific
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
-" for older versions of neovim
-let g:vimtex_version_check = 0
+source plugins.vim
 
 
 " +-----------------------------------------------------------------+
@@ -147,10 +88,16 @@ if has('unix')
     set t_Co=256
 endif
 
-colorscheme nord
-"set background=light
-let g:airline_theme='one'
+colorscheme solarized
+set background=light
+
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='light'
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+" for when powerline symbols don't work with the above
+" source powerline-symbols.vim
 
 
 " +-----------------------------------------------------------------+
@@ -163,6 +110,9 @@ au Filetype tex set showbreak=-- " inserts the '--' string before the trailing b
 au Filetype tex set spell
 au Filetype tex set spelllang=en_ca
 au Filetype tex inoremap <c-c> <c-g>u<Esc>[s1z=`]a<C-g>u 
+au Filetype tex colorscheme one
+au Filetype tex set background=light
+au Filetype tex let g:airline_theme='oceanicnextlight'
 
 au Filetype text set wrap
 au Filetype text set linebreak " wraps at a word boundary rather than in the middle
