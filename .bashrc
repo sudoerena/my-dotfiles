@@ -20,15 +20,14 @@ alias dirs='dirs -v'
 # ADD check for existing
 # alias trash='mv -t ~/.Trash'
 trash () {
-    LIST="$@"
-    i=1
     for FILE in "$@"; do
+        WD=${PWD}
         # if found file
-        if [[ -f "$FILE" || -d "$FILE" ]]; then
+        if [ -f "$FILE" ] || [ -d "$FILE" ]; then
             if [[ "$FILE" =~ /$ ]]; then
+                echo "isDir"
                 FILE="${FILE%?}"
             fi
-            WD=${PWD}
             cd ~/.Trash
             # if found file in Trash
             if [[ -f "$FILE" || -d "$FILE" ]]; then
@@ -44,14 +43,19 @@ trash () {
             else
                 mv "${WD}"/"${FILE}" ~/.Trash/
             fi
+        else
+            echo "File not found."
         fi
-        LIST=
+        cd "$WD"
         FILE=
     done
-    cd "$WD"
 }
 
 cdc () {
     mkdir $1
     cd $1
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
