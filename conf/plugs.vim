@@ -7,17 +7,21 @@
 
 " general vim:
 Plug 'vim-airline/vim-airline'
-Plug 'lambdalisue/battery.vim'
+" Plug 'lambdalisue/battery.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vader.vim'
 Plug 'sirver/ultisnips'
+Plug 'tpope/vim-endwise' " check if you use this
 
 " tmux/workflow
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'jpalardy/vim-slime'
+Plug 'jpalardy/vim-slime', { 'branch': 'main' }
 Plug 'edkolev/tmuxline.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'iamcoo/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " colour schemes:
 Plug 'mhartington/oceanic-next' 
@@ -45,6 +49,9 @@ Plug 'luochen1990/rainbow'
 " haskell:
 Plug 'neovimhaskell/haskell-vim'
 Plug 'urso/haskell_syntax.vim'
+
+" json:
+Plug 'elzr/vim-json'
 
 "call plug#end()
 

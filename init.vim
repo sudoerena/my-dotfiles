@@ -74,7 +74,7 @@ call plug#begin('~/.config/nvim/plugged')
 source ~/.config/nvim/conf/plugs.vim
 call plug#end()
 
-source ~/.config/nvim/conf/plugins.vim
+source ~/.config/nvim/conf/set-plug.vim
 
 
 " +-----------------------------------------------------------------+
@@ -97,7 +97,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " for when powerline symbols don't work with the above
-" source ~/.config/nvim/conf/powerline-symbols.vim
+" source ~/.config/nvim/conf/font.vim
 
 
 " +-----------------------------------------------------------------+
@@ -121,5 +121,13 @@ au Filetype text set showbreak=-- " inserts the '--' string before the trailing 
 au Filetype text set spell
 au Filetype text set spelllang=en_ca
 au Filetype text inoremap <c-c> <c-g>u<Esc>[s1z=`]a<C-g>u
+
+au Filetype markdown set wrap
+au Filetype markdown set linebreak " wraps at a word boundary rather than in the middle
+au Filetype markdown set breakindent " line visually indented (source not affected
+au Filetype markdown set showbreak=-- " inserts the '--' string before the trailing broken rows
+au Filetype markdown set spell
+au Filetype markdown set spelllang=en_ca
+au Filetype markdown inoremap <C-c> <C-g>u<Esc>[s1z=`]a<C-g>u
 
 au BufRead,BufNewFile *.stc set filetype=haskell
