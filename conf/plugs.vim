@@ -21,7 +21,7 @@ Plug 'jpalardy/vim-slime', { 'branch': 'main' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'iamcoo/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 " colour schemes:
 Plug 'mhartington/oceanic-next' 
