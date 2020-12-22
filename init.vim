@@ -35,6 +35,11 @@ if has('unix')
     let g:python3_host_prog = '/usr/bin/python3'
 endif
 
+" mac specific
+if has('mac')
+    let g:python3_host_prog = '/usr/local/bin/python3'
+endif
+
 
 " +-----------------------------------------------------------------+
 " |                            Key Remaps                           |
@@ -51,7 +56,7 @@ inoremap kj <esc>
 " \k clears search highlight
 nnoremap \k :let<space>@/=""<CR>
 " '==' formats indent, and moves back to previous location
-nnoremap == gg=G``
+nnoremap == mmgg=G`m
 " '=i' sets light background, like 1 (on)
 nnoremap =i :set<space>background=light<CR>
 " '=o' sets dark background, like 0 (off)
