@@ -31,12 +31,13 @@ trash () {
             cd ~/.Trash
             # if found file in Trash
             if [[ -f "$FILE" || -d "$FILE" ]]; then
+                i=1
                 while : ; do
                     # if found file(i)
-                    if [[ -f "${FILE}(${i})" || -d "${FILE}(${i})" ]]; then
+                    if [[ -f "${FILE}_${i}" || -d "${FILE}_${i}" ]]; then
                         ((i+=1))
                     else
-                        mv "${WD}"/"${FILE}" ~/.Trash/"${FILE}(${i})"
+                        mv "${WD}"/"${FILE}" ~/.Trash/"${FILE}_${i}"
                         break
                     fi
                 done
