@@ -22,6 +22,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'airblade/vim-gitgutter'
 
 " colour schemes:
 Plug 'mhartington/oceanic-next' 
