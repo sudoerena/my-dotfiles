@@ -14,7 +14,7 @@ let g:vimtex_version_check = 0
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsEditSplit = "vertical"
+let g:UltiSnipsEditSplit = "context"
 let g:UltiSnipsSnippetDirectories=['UltiSnips', 'MySnips']
 
 " 'jpalardy/vim-slime'
