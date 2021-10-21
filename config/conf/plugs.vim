@@ -1,19 +1,16 @@
 " +-----------------------------------------------------------------+
 " |                              Vim Plug                           |
 " +-----------------------------------------------------------------+
-"call plug#begin('~/.config/nvim/plugged')
-"or
-"call plug#begin('~/.vim/plugged')
-
 " general vim:
 Plug 'vim-airline/vim-airline'
-" Plug 'lambdalisue/battery.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vader.vim'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-endwise' " check if you use this
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " tmux/workflow
 Plug 'christoomey/vim-tmux-navigator'
@@ -53,6 +50,3 @@ Plug 'urso/haskell_syntax.vim'
 
 " json:
 Plug 'elzr/vim-json'
-
-"call plug#end()
-
