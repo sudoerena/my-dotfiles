@@ -32,3 +32,10 @@ function! g:LoadFF(url)
     ":echo a:url
 endfunction
 let g:mkdp_browserfunc = 'g:LoadFF'
+
+" 'preservim/nerdtree'
+nnoremap <silent> <C-K><C-B> :NERDTreeToggle<CR>
+augroup nerdtree_open
+    autocmd!
+    autocmd VimEnter *NERDTree | wincmd p
+augroup END

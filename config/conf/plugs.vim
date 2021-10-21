@@ -9,8 +9,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vader.vim'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-endwise' " check if you use this
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'preservim/nerdtree'
 
 " tmux/workflow
 Plug 'christoomey/vim-tmux-navigator'
