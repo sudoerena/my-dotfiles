@@ -18,7 +18,7 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.config/nvim/undodir
+set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set encoding=utf-8

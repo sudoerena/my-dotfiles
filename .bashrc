@@ -5,8 +5,10 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+export PATH=~/me/tools:$PATH
+
 # source racket completion
-source /usr/local/racket/share/pkgs/shell-completion/racket-completion.bash
+#source /usr/local/racket/share/pkgs/shell-completion/racket-completion.bash
 
 set -o vi
 
