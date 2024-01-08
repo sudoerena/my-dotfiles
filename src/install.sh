@@ -3,9 +3,17 @@ WD=${PWD}
 mkdir ~/.dotfile-backups/
 BACKUP=~/.dotfile-backups/
 
+# generic profile
+cp -rp ~/.profile $BACKUP
+ln -s "${WD}"/config/profile.conf ~/.profile
+
 # bash
 cp -rp ~/.bashrc $BACKUP
 ln -s "${WD}"/config/bash.conf ~/.bashrc
+
+# zsh
+cp -rp ~/.zshrc $BACKUP
+ln -s "${WD}"/config/zsh.conf ~/.zshrc
 
 # i3wm
 cp -rp ~/.config/i3/config $BACKUP
