@@ -28,7 +28,7 @@ Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'morhetz/gruvbox' 
 Plug 'NLKNguyen/papercolor-theme' 
 Plug 'rakr/vim-one' 
-Plug 'altercation/vim-colors-solarized'
+Plug 'maxmx03/solarized.nvim'
 Plug 'humanoid-colors/vim-humanoid-colorscheme', { 'branch': 'main' }
 Plug 'junegunn/seoul256.vim'
 " airline themes:
